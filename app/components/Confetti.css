@@ -1,0 +1,37 @@
+/* src/components/Confetti.css */
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Permite hacer clic debajo del confeti */
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 8px; /* Tamaño del confeti */
+    height: 15px;
+    opacity: 0;
+    will-change: transform, opacity; /* Optimización de rendimiento */
+    z-index: 100;
+    
+    /* Animación principal */
+    animation: fallAndRotate linear infinite;
+}
+
+@keyframes fallAndRotate {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%) rotate(0deg);
+    }
+    10% {
+        opacity: 1; /* Aparece rápido */
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateY(110vh) rotate(720deg); /* Cae hasta el fondo */
+    }
+}

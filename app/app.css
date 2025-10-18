@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* 2. Asegura que el contenedor de la app sea visible */
+html, #root {
+  min-height: 100%; /* Asegura que el HTML y el contenedor de React ocupen toda la altura */
+  height: 100vh;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Estilos Globales */
+body {
+    background: linear-gradient(135deg, #FFF5F5 0%, #FFE4E1 100%);
+    font-family: 'Dancing Script', cursive; 
+    height: 100vh; /* Ya tenías esta, pero la agregamos a #root y html también por seguridad */
+    overflow-x: hidden;
+    margin: 0; /* Asegura que no haya margen predeterminado */
+}
+/* El resto de estilos CSS que no son de Tailwind, como animaciones y estilos de rango */
+.music-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: rgba(255, 182, 193, 0.2); /* un tono rosado suave */
+  color: #e91e63;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.music-control:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 182, 193, 0.35);
+}
+
+/* Animación para el fondo del modal */
+@keyframes fade-bg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-bg {
+  animation: fade-bg 0.5s ease forwards;
+}
+
+/* Animación del modal */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

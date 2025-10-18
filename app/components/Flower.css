@@ -1,0 +1,96 @@
+/* src/components/Flower.css */
+
+/* --- Animación de Rotación --- */
+@keyframes slow-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Contenedor de la Flor (Es el que rota) --- */
+.petal-container {
+    position: relative;
+    width: 256px; /* w-64 */
+    height: 256px; /* h-64 */
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    
+    /* Aplicar la animación de rotación al contenedor */
+    animation: slow-spin 40s linear infinite; 
+}
+
+/* --- Estilos del Pétalo (Giran con el contenedor) --- */
+.petal {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center; /* El punto de rotación del pétalo es su propio centro */
+    cursor: pointer;
+    z-index: 5; /* Asegura que estén por encima del fondo */
+}
+
+/* --- Posiciones Iniciales y Rotaciones (Fijos al centro del contenedor) --- */
+/* NOTA: Las transformaciones se aplican ANTES de la animación de rotación del contenedor. */
+.petal-1 {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-90px);
+}
+.petal-2 {
+    transform: translate(-50%, -50%) rotate(72deg) translateY(-90px);
+}
+.petal-3 {
+    transform: translate(-50%, -50%) rotate(144deg) translateY(-90px);
+}
+.petal-4 {
+    transform: translate(-50%, -50%) rotate(216deg) translateY(-90px);
+}
+.petal-5 {
+    transform: translate(-50%, -50%) rotate(288deg) translateY(-90px);
+}
+
+/* --- Efecto Hover (Se separa un poco y escala) --- */
+.petal:hover {
+    filter: brightness(1.1);
+    z-index: 20; 
+    /* Esta transformación completa debe reemplazar la transformación base y añadir el efecto */
+}
+
+.petal-1:hover {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-110px) scale(1.1); 
+}
+.petal-2:hover {
+    transform: translate(-50%, -50%) rotate(72deg) translateY(-110px) scale(1.1);
+}
+.petal-3:hover {
+    transform: translate(-50%, -50%) rotate(144deg) translateY(-110px) scale(1.1);
+}
+.petal-4:hover {
+    transform: translate(-50%, -50%) rotate(216deg) translateY(-110px) scale(1.1);
+}
+.petal-5:hover {
+    transform: translate(-50%, -50%) rotate(288deg) translateY(-110px) scale(1.1);
+}
+
+
+/* --- Estilos del Centro (Botón) --- */
+/* Nota: Este div debe estar FUERA del contenedor animado para que NO gire */
+.flower-center {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* Tu gradiente de color secundario (Dorado) */
+    background: radial-gradient(circle, var(--secondary) 0%, #FFD700 100%); 
+    box-shadow: 0 0 20px rgba(218,165,32,0.5);
+    z-index: 10;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
