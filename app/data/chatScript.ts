@@ -224,8 +224,10 @@ export const chatScript: ChatMessage[] = [
     { 
         id: 440, 
         sender: 'me', 
-        type: 'audio', 
-        content: AUDIO_CONTENT, 
+        type: 'audio_onetime', // 👈 ¡CAMBIO AQUÍ!
+        content: AUDIO_CONTENT, // '/music.m4a'
+        placeholder: "Un mensaje de voz especial, ¡escucha con atención!", // Nuevo texto de placeholder
+        saveKey: "audio_visto", // Clave para registrar que fue visto/escuchado
         nextId: 450 
     },
     

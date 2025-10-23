@@ -4,7 +4,7 @@ export type Sender = 'me' | 'her' | 'system';
 export type MessageType = 
    'text' | 
    'options' |
-   'audio' | 
+   'audio_onetime' | 
    'image_onetime' |
    'video_onetime' |
    'input_save' |

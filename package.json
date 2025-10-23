@@ -6,6 +6,7 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
+    "next-dev": "next dev",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "framer-motion": "^12.23.21",
     "gsap": "^3.13.0",
     "isbot": "^5.1.27",
+    "next": "^15.5.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.63.0",
