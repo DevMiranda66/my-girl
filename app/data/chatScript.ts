@@ -1,6 +1,6 @@
 import type { ChatMessage } from '../types/chat';
 
-const FOTO_1_URL = "/lindos.jpg"; 
+const FOTO_1_URL = "/x.jpg"; 
 const FOTO_2_URL = "/lindos.jpg"; 
 const VIDEO_URL = "/x.mp4"; 
 const AUDIO_CONTENT = "/music.m4a"; 
@@ -264,4 +264,5 @@ export const chatScript: ChatMessage[] = [
         type: 'reset_button', 
         content: "Chat finalizado. Presiona aquí para reiniciar el estado (DEBUG ONLY).",
     },
+
 ];
